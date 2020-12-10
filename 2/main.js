@@ -116,8 +116,6 @@ const html = (arr, pA, pB, pC, r) => {
               <span class="tf-nc">Відкласти (${arr[4].value})</span>
                   <ul>
 
-                    <li><span class="tf-nc">${arr[4].max}</span>
-                                         <ul>
                     <li><span class="tf-nc  ${
                       r == 2 ? "alert-success" : null
                     }">Великий завод (${arr[2].value})</span>
@@ -152,8 +150,7 @@ const html = (arr, pA, pB, pC, r) => {
                     </li>
                   </ul>
                     </li>
-                  </ul>
-                    </li>
+
                     <li>
                         
                     <li><span class="tf-nc">${arr[4].min}</span></li>
