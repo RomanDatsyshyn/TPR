@@ -8,12 +8,10 @@ let maxOfSumValues = 0;
 const showResults = () => {
   parseData();
   convertToDecimalMarkSystem();
-
-  console.log(data);
-  // findMaxValues();
-  // sumObjectValues();
-  // findMaxOfSumValues();
-  // pasteTableToTHML();
+  findMaxValues();
+  sumObjectValues();
+  findMaxOfSumValues();
+  pasteTableToTHML();
 };
 
 const parseData = () => {
@@ -32,11 +30,19 @@ const parseData = () => {
 
 const convertToDecimalMarkSystem = () => {
   for (let i = 0; i < data.length; i++) {
-    data[i].price = convertPrice(data[i].price).toFixed(2);
-    data[i].squareMeters = convertMeters(data[i].squareMeters).toFixed(2);
-    data[i].acresOfLand = convertAcres(data[i].acresOfLand).toFixed(2);
-    data[i].kmToTheСenter = convertKm(data[i].kmToTheСenter).toFixed(2);
-    data[i].bedrooms = convertbedrooms(data[i].bedrooms).toFixed(2);
+    data[i].price = (convertPrice(data[i].price) * weights[0]).toFixed(2);
+    data[i].squareMeters = (
+      convertMeters(data[i].squareMeters) * weights[1]
+    ).toFixed(2);
+    data[i].acresOfLand = (
+      convertAcres(data[i].acresOfLand) * weights[2]
+    ).toFixed(2);
+    data[i].kmToTheСenter = (
+      convertKm(data[i].kmToTheСenter) * weights[3]
+    ).toFixed(2);
+    data[i].bedrooms = (convertbedrooms(data[i].bedrooms) * weights[4]).toFixed(
+      2
+    );
   }
 };
 
