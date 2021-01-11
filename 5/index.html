@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/treeflex/dist/css/treeflex.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <meta charset="utf-8" />
+
+    <title>Матричні ігри. | Lab5 - Datsyshyn Roman</title>
+
+    <script src="https://unpkg.com/mathjs@7.3.0/dist/math.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Лабораторна робота №5</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" style="color: aliceblue"
+                >Виконав - Дацишин Роман</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="./logo.jpg" alt="НУ ЛП" class="img-fluid logo" />
+          </div>
+          <div class="col-sm-9">
+            <h1>Теорія прийняття рішень</h1>
+            <p class="lead">Матричні ігри.</p>
+
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="00input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="01input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="02input"
+                value="10"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="03input"
+                value="7"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="04input"
+                value="4"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="10input"
+                value="5"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="11input"
+                value="9"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="12input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="13input"
+                value="8"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="14input"
+                value="4"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="20input"
+                value="6"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="21input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="22input"
+                value="10"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="23input"
+                value="4"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="24input"
+                value="5"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="30input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="31input"
+                value="7"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="32input"
+                value="10"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="33input"
+                value="6"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="34input"
+                value="9"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                id="40input"
+                value="5"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="41input"
+                value="3"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="42input"
+                value="7"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="43input"
+                value="9"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+              <input
+                type="text"
+                id="44input"
+                value="11"
+                style="text-transform: uppercase"
+                class="form-control col-2 text-center"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+
+            <button
+              type="button"
+              onclick="start()"
+              class="btn btn-success mt-2 col-10 btn-block h-45"
+            >
+              Дізнатися результат
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content demo">
+      <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <h1 class="main-title">
+          <span class="thin">Lab 5</span>
+        </h1>
+      </div>
+    </div>
+
+    <div id="wow"></div>
+
+    <footer class="py-3 alert-dark">
+      <div class="container">
+        <p class="m-0 text-center">&copy; DRV 2021</p>
+      </div>
+    </footer>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
